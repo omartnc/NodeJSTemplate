@@ -841,3 +841,10 @@
 {"level":"info","message":"Connected to mongodb://omer:dogutunc04@ds054118.mlab.com:54118/whereisthemyservice...","timestamp":"2019-02-01T18:28:08.980Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2019-02-01T18:28:39.475Z"}
 {"level":"info","message":"Connected to mongodb://localhost/vidlydb...","timestamp":"2019-02-01T18:28:40.494Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-02-23T14:59:19.877Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-02-23T15:03:23.547Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidlydb...","timestamp":"2019-02-23T15:03:23.563Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-02-23T15:06:12.785Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidlydb...","timestamp":"2019-02-23T15:06:12.799Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-02-23T15:06:17.815Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidlydb...","timestamp":"2019-02-23T15:06:17.829Z"}

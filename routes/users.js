@@ -1,4 +1,5 @@
 const auth = require('../middleware/auth');
+const admin = require('../middleware/admin');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const bcrypt = require('bcryptjs');
@@ -12,6 +13,11 @@ const winston=require('winston');
 router.get('/me', [auth], async (req, res) => {
   const user = await User.findById(req.user._id).select('-password');
   res.send(user);
+});
+
+router.get('/', [admin], async (req, res) => {
+  const users = await User.find().select('-password');
+  res.send(users);
 });
 
 router.post('/', async (req, res) => {

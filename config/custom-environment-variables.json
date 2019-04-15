@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "vidly_jwtPrivateKey",
-  "db": "vidly_db"
+  "jwtPrivateKey": "project_name_jwtPrivateKey",
+  "db": "dbname_db"
 }

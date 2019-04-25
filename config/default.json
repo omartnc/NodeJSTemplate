@@ -1,4 +1,4 @@
 {
   "jwtPrivateKey": "1234",
-  "db": "mongodb://localhost/dbname_db"
+  "db": "mongodb://localhost/bot_control_db"
 }

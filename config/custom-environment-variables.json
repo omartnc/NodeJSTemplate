@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "project_name_jwtPrivateKey",
-  "db": "dbname_db"
+  "jwtPrivateKey": "bot_control_jwtPrivateKey",
+  "db": "bot_control_db"
 }

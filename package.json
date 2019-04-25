@@ -27,6 +27,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "mongoose": "^5.0.2",
+    "validator": "^10.11.0",
     "winston": "^2.4.0",
     "winston-mongodb": "^3.0.0"
   },

@@ -15,16 +15,16 @@ const validateRegisterInput = require("../validation/register");
 
 router.get("/me", [auth], async (req, res) => {
   const user = await User.findById(req.user._id).select("-password");
-  res.send(user);
+  res.json(user);
 });
 
 router.get("/", [admin], async (req, res) => {
   const users = await User.find().select("-password");
-  res.send(users);
+  res.json(users);
 });
 router.get("/:id", [admin], async (req, res) => {
   const user = await User.findById(req.params.id);
-  res.send(user);
+  res.json(user);
 });
 
 router.put("/:id", [admin], async (req, res) => {
@@ -41,9 +41,9 @@ router.put("/:id", [admin], async (req, res) => {
   );
 
   if (!user)
-    return res.status(404).send("The user with the given ID was not found.");
+    return res.status(404).json("The user with the given ID was not found.");
 
-  res.send(user);
+  res.json(user);
 });
 
 router.post("/", async (req, res) => {
@@ -51,10 +51,10 @@ router.post("/", async (req, res) => {
 
   //Check Validation
   if (!isValid) {
-    return res.status(400).send(errors);
+    return res.status(400).json(errors);
   }
   let user = await User.findOne({ email: req.body.email });
-  if (user) return res.status(400).send("User already registered.");
+  if (user) return res.status(400).json("User already registered.");
 
   user = new User(_.pick(req.body, ["name", "email", "password"]));
   const salt = await bcrypt.genSalt(10);
@@ -67,7 +67,7 @@ router.post("/", async (req, res) => {
 
   res
     .header("x-auth-token", token)
-    .send(_.pick(user, ["_id", "name", "email"]));
+    .json(_.pick(user, ["_id", "name", "email"]));
 });
 // Delete User
 

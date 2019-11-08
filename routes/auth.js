@@ -13,15 +13,19 @@ router.post('/', async (req, res) => {
 let errors={};
   let user = await User.findOne({ email: req.body.email });
   errors.email='Invalid email or password.';
-  if (!user) return res.status(400).json(errors);
+  if (!user) return res.status(400).json({errors:errors});
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   errors.password='Invalid email or password.'
-  if (!validPassword) return res.status(400).json(errors);
+  if (!validPassword) return res.json({errors:errors});
 
   const token = user.generateAuthToken();
   winston.info( user._id+" : idli kullanici sisteme giris yapti.");
-  res.json(token);
+
+  res.json({
+    token:token,
+    user:user
+  });
 });
 
 function validate(req) {
